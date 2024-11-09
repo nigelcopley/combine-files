@@ -2,14 +2,20 @@ import os
 import logging
 from pathlib import Path
 
-# Default directories and filenames to exclude for Django and Next.js projects
+# Default directories to exclude for Django and Next.js projects
 DEFAULT_EXCLUDE_DIRS = [
     "__pycache__", "migrations", "static", "media", "venv", "env", "node_modules",
-    ".next", "out", "public", "styles"
+    ".next", "out", "public", "styles", ".venv", ".env", ".next"
 ]
 
-DEFAULT_EXCLUDE_FILES = ["package-lock.json", "yarn.lock", ".env", ".DS_Store", "Thumbs.db"]
-
+DEFAULT_EXCLUDE_FILES = [
+    "package-lock.json", "yarn.lock", "Pipfile.lock", "poetry.lock",
+    ".env", ".env.local", ".env.development", ".env.production",
+    ".DS_Store", "Thumbs.db", ".gitignore", ".editorconfig", ".eslintignore",
+    ".prettierignore", "webpack.config.js", "tsconfig.json", ".babelrc",
+    "babel.config.js", "package.json", "jest.config.js", "jest.setup.js",
+    "pytest.ini", "tox.ini", ".coveragerc"
+]  # Add any other common files to exclude
 
 class CombineFiles:
     def __init__(self, root_directory, extension, output_file, target_name=None, exclude_dirs=None, exclude_files=None,
