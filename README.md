@@ -104,7 +104,6 @@ combiner = CombineFiles(
 
 # Run the file combination process
 combiner.combine_files()
-```
 
 ---
 
@@ -132,7 +131,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Author
 
-Developed by [Your Name](https://github.com/yourusername)
+Developed by [Nigel Copley](https://github.com/nigelcopley)
 
 ---
 
