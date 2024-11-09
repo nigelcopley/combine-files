@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# combine-files
-=======
 # CombineFiles
 
 **CombineFiles** is a Python class-based tool for traversing directory trees and aggregating text-based files. It allows you to locate, filter, and combine content from files with a specified extension into a single output file. With options for filtering by directory or filename, as well as default exclusions for common development files, CombineFiles streamlines data preparation across projects. The class-based structure makes it easy to configure, reuse, and extend.
@@ -91,7 +88,7 @@ python combine_files.py <root_directory> <extension> <output_file> [options]
 
 You can also import and use `CombineFiles` directly in your code:
 
-```python
+
 from combine_files import CombineFiles
 
 # Initialize the class with your parameters
@@ -141,4 +138,3 @@ Developed by [Your Name](https://github.com/yourusername)
 
 **CombineFiles** is a modular and powerful tool for consolidating files across complex project directories, making it ideal for data preparation, documentation aggregation, and more. Enjoy!
 ```
->>>>>>> Initial commit
