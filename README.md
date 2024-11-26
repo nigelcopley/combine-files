@@ -131,7 +131,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Author
 
-Developed by [Nigel Copley](https://github.com/nigelcopley)
+Developed by [Nigel Copley](https://nigelcopley.com)
 
 ---
 

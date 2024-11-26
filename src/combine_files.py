@@ -46,17 +46,22 @@ class CombineFiles:
 
                     # Check if we're filtering by target_name
                     is_target_dir = self.target_name and os.path.basename(root) == self.target_name
+                    print(f"Checking directory: {root}, is_target_dir: {is_target_dir}")  # Debugging statement
 
                     for file in files:
                         # Exclude specified files
+                        print(f'File {file} found in directory: {root}')
                         if file in self.exclude_files:
                             logging.debug(f"Skipping excluded file: {file}")
                             continue
 
                         # Determine if this file should be processed
-                        is_target_file = self.target_name and file == self.target_name
+                        is_target_file = self.target_name and file.startswith(self.target_name) and file.endswith(self.extension)
+                        print(f"Checking file: {file}, is_target_file: {is_target_file}")  # Debugging statement
+
                         if (is_target_dir or is_target_file or not self.target_name) and file.endswith(self.extension):
                             file_path = os.path.join(root, file)
+                            print(f"Processing file: {file_path}")  # Debugging output
                             logging.info(f"Processing file: {file_path}")
                             try:
                                 with open(file_path, 'r', encoding='utf-8') as infile:
@@ -85,6 +90,15 @@ if __name__ == "__main__":
     parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose logging.")
 
     args = parser.parse_args()
+
+    # Debugging: Print parsed arguments to verify
+    print("root_directory:", args.root_directory)
+    print("extension:", args.extension)
+    print("output_file:", args.output_file)
+    print("target_name:", args.target_name)
+    print("exclude_dirs:", args.exclude_dirs)
+    print("exclude_files:", args.exclude_files)
+    print("verbose:", args.verbose)
 
     # Initialize and run the CombineFiles class
     combiner = CombineFiles(
